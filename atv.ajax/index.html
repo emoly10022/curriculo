@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo</title>
+    <link rel="stylesheet" href="./estilo.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="principal">
+        <div class="esquerda">
+            <div class="perfil">
+                <div class="imagem"><img src="LorelaiGilmore.jpg" alt="imagem Lorelai" id="img"></div>
+                <div class="nome-profissao">
+                    <h1>Lorelai Gilmore</h1>
+                    <h2>Jornalista</h2>
+                </div>                
+            </div>          
+            <div class="contatos">
+                    <h1>Contatos</h1>
+                    <h4>www.linkedin.com/rorygilmore</h4>
+                    <h4>62 1234-5678</h4>
+                    <h4>@rory_gilmore</h4>
+                    <h4>gilmoregilrs</h4>
+                    <h4>lorealigilmore@gilmoregilrs.com</h4>
+            </div>
+            <h1>Formações</h1>
+            <p><a href="adicionar.html">Adicionar</a></p><br>
+            <div id="formacao" class="formacoes">
+                <h1>Formações</h1>
+                <h4>2003-2007</h4>
+                <h4>Bacharel em Jornalismo</h4>
+                <h4>Yale University</h4>
+                <br>
+                <br>
+                <h4>2000-2007</h4>
+                <h4>Filha de Lorelai Victoria Gilmore</h4>
+                <h4>Gilmore Gilrs-melhor série já feita</h4>
+            </div>
+        </div>
+
+        <div class="direita">
+            <button id="btn" class="btn">Mudar cor</button>
+            <div class="descricao">
+                <h1>Descrição</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In tellus integer feugiat scelerisque varius. Velit laoreet id donec ultrices tincidunt arcu non sodales. Ut etiam sit amet nisl purus in. Egestas pretium aenean pharetra magna ac placerat. Semper quis lectus nulla at volutpat diam. Pellentesque id nibh tortor id aliquet lectus. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus. Arcu dictum varius duis at consectetur lorem donec massa. Faucibus turpis in eu mi bibendum neque egestas congue quisque. Ipsum faucibus vitae aliquet nec ullamcorper sit. Et malesuada fames ac turpis.</p>
+            </div>
+            <div class="experiencia">
+                <h1>Experiências</h1>
+                <h4>2017-presente</h4>
+                <h4>The Handmaid's Tale</h4>
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In tellus integer feugiat scelerisque varius. Velit laoreet id donec ultrices tincidunt arcu non sodales. Ut etiam sit amet nisl purus in. Egestas pretium aenean pharetra magna ac placerat. Semper quis lectus nulla at volutpat diam. Pellentesque id nibh tortor id aliquet lectus.</p>
+                <br>
+                <br>
+                <br>
+                <h4>2000-2007</h4>
+                <h4>Gilmore Girls</h4>
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In tellus integer feugiat scelerisque varius. Velit laoreet id donec ultrices tincidunt arcu non sodales. Ut etiam sit amet nisl purus in. Egestas pretium aenean pharetra magna ac placerat. Semper quis lectus nulla at volutpat diam. Pellentesque id nibh tortor id aliquet lectus.</p>
+            </div>
+            <div class="habilidades">
+                <h1>Habilidade</h1>
+                <h4>Mais de 300 livros lidos</h4>
+                <h4>Conseguir tomar 2 litros de café ao dia</h4>
+                <h4>Suportar Paris Geller</h4>
+                <button id="botaoAjax">Clique aqui!</button>
+            </div>      
+        </div>
+    </div>
+    <script>
+        $("#btn").on("click", botao)
+        let i = 0;
+        function botao(){
+            if (i==0){
+                $(".esquerda").css("background", "#FF1475")
+                $(".direita").css("background", "#FFCF00")
+                $("body").css("background-color", "#009BCC")
+                $(".btn").css("background-color", "#FF1475")
+
+                i += 1;
+            }
+            else {
+                $(".esquerda").css("background", "#D70270")
+                $(".direita").css("background", "#734F96")
+                $("body").css("background-color", "#0038A8")
+                $(".btn").css("background-color", "#D70270")
+                
+                i -= 1;
+
+            }
+        }
+        $(document).ready(function(){
+            $("#img").click(function(){
+            $("#img").attr("src", "lorelai2.jpg");
+            });
+        });
+        $(document).ready(function(){
+  $("#botaoAjax").click(function(){
+    $.get("atv.txt", function(text){
+      alert("Teste: " + text );
+    });
+  });
+});
+    </script>
+
+    <script>
+        /* const url = '/usuarios';
+
+        fetch(url)
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            let usuarios = data;
+            let saida = '';
+            usuarios.map(function(usuario) {
+            saida += '<strong> '+ `${usuario.nome}` + '</strong> ' + `${usuario.email}`  + ' - ' +  `${usuario.telefone}`;
+            saida += ' - <a href="/atualizaUsuario?cod_usuario=' + `${usuario.cod_usuario}` + '">EDITAR</a>';
+            saida += ' | <a href="/removeUsuario?cod_usuario='+`${usuario.cod_usuario}`+'">REMOVER</a></br>';
+            });
+            document.getElementById('resultado').innerHTML = saida;
+        })
+        .catch(function(error) {
+            console.log(error);
+        }); */
+       /* const urlUsuario = "/listaUsuario";
+        const divUsuario = document.getElementById("usuario");
+
+      fetch(urlUsuario)//faz a requisição
+          .then((response) => {
+              return response.json();
+          })
+          .then((data) => {
+            let usuarios = data;
+            let saida = '';
+            usuarios.map(function(usuario) {
+            saida += '<strong> '+ `${usuario.nome}` + '</strong> ' + `${usuario.idade}`  + ' - ' +  `${usuario.email}`  + ' - ' +  `${usuario.endereco}`  + ' - ' +  `${usuario.telefone}`;
+            saida += ' - <a href="/atualizaUsuario?cod_usuario=' + `${usuario.cod_usuario}` + '">EDITAR</a>';
+            saida += ' | <a href="/removeUsuario?cod_usuario='+`${usuario.cod_usuario}`+'">REMOVER</a></br>';
+            });
+            divUsuario.innerHTML = saida;
+        })
+        .catch(function(error) {
+            console.log(error);
+        });*/
+///////////////////////////////////////////////////
+        const urlFormacao = "/listaFormacao";
+        const divFormacao = document.getElementById("formacao");
+
+      fetch(urlFormacao)//faz a requisição
+          .then((response) => {
+              return response.json();
+          })
+          .then((data) => {
+            let formacoes = data;
+            let saida = '';
+            formacoes.map(function(formacoes) {
+            saida += '<strong> '+ `${formacoes.curso}` + '</strong> ' + `${formacoes.data_de_inicio}`  + ' - ' +  `${formacoes.data_de_formacao}`  + ' - ' +  `${formacoes.instituicao}`;
+            saida += ' - <a href="/atualiza.html?' + `${formacoes.id}` + '">EDITAR</a>';
+            saida += ' | <a href="/removeFormacao?id='+`${formacoes.id}`+'">REMOVER</a></br>';
+            });
+            divFormacao.innerHTML = saida;
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+        
+    
+    </script>
+ 
+</body>
+</html>

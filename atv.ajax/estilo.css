@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    font-size: 100%;
+    background-color: #0038A8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.principal{
+    position: relative;
+    width: 100%;
+    max-width: 1300px;
+    max-height: 1300px;
+    margin: 80px;
+    width: 1300px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+.esquerda{
+    position: relative;
+    background: #D70270;
+    padding: 20px;
+}    
+.perfil{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.imagem{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 10px;
+}
+.imagem > img{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.perfil{
+    color:aliceblue;
+    font-size: larger;
+    text-transform: uppercase;
+    text-align: center;
+}
+.perfil h2{
+    text-align: center;
+    color:aliceblue;
+    font-size: larger;
+}
+h1{
+    color: aliceblue;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 25px;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+.contatos{
+    margin-top: 30px;
+    color: aliceblue;
+    text-align: justify;
+}
+h4{
+    color: aliceblue;
+}
+.formacoes{
+    color: aliceblue;
+    margin-top: 30px;
+}
+.direita{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: #734F96;
+    padding: 30px;
+    text-align: justify;
+    float: right;
+}
+.descricao{
+    margin-bottom: 40px;
+    margin-top: 30px;
+    text-align: justify;
+}
+.experiencia{
+    text-align: justify;
+    margin-top: 40px;
+}
+.habilidades{
+    color: aliceblue;
+    margin-top: 40px;
+    text-align: justify;
+    line-height: 30px;
+}
+
+p{
+    color: white;
+}
+
+.btn {
+    background-color:#FF1475;
+    border: none;
+    cursor: pointer;
+    color: aliceblue;
+    text-decoration: none;
+    text-align: center;
+}
+
+@media screen and (max-width:1000px){
+    .principal{
+        margin: 10px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .perfil > .imagem{
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 50%;
+        align-items: center;
+    }
+}
+@media screen and (max-width:600px){
+    .principal{
+        margin: 10px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .perfil > .imagem{
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 40%;
+        height: 40%;
+        align-items: center;
+    }
+}
+#botaoAjax {
+    top: 0;
+    left: 10;
+    width: 20%;
+    height: 15%;
+}

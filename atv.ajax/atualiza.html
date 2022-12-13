@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATUALIZA USUARIO</title>
+</head>
+<body>
+    <h1>Atualiza o usuário</h1>
+        <br>
+            <!--Cria a classe para inserir usuario-->
+            <form id="formacao" name="form2" method="post" action="/atualizaFormacao" class="textfield">
+                <label for="formacao">Curso</label>
+                <input type="text" name="curso"><br>
+                <label for="formacao">Data de inicio</label>
+                <input type="date" name="data_de_inicio"><br>
+                <label for="formacao">Data de formacao</label>
+                <input type="date" name="data_de_formacao"><br>
+                <label for="formacao">Instituição</label>
+                <input type="text" name="instituicao"><br>
+                <!--Cria o botao para avançar-->
+                <button class="btn-login">AVANÇAR</button>
+            </form>
+        <script>
+            let form = document.getElementById("formacao");
+            let forma = +window.location.search.replace('?','');
+            console.log(forma);
+            form.action = '/atualizaFormacao?id='+ forma;
+
+        </script>
+</body>
+</html>
